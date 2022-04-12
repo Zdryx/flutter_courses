@@ -5,6 +5,8 @@ import 'package:lite_version/screens/app_bar.dart';
 import 'package:lite_version/screens/theme_data_func.dart';
 import 'package:lite_version/utils/global_theme.dart';
 
+import 'lists.dart';
+
 class NavigationDemo extends StatefulWidget{
   const NavigationDemo({Key? key}) : super (key: key);
 
@@ -26,6 +28,7 @@ class _NavigationDemoState extends State<NavigationDemo>{
           '/auth': (context) => const AuthScreen(),
           '/appbar': (context) => const AppBarScreen(),
           '/theme' :(context) => const ThemeDataDemo(),
+          '/lists' :(context) => const ListsBuilder(),
         },
       //scaffoldMessengerKey: _messengerKey,
     );
@@ -114,6 +117,16 @@ class _NavigationScreenState extends State<NavigationScreen>{
                    //   const SnackBar(content: Text("Переход в настройки"),)
                  // );
                   Navigator.pushNamed(context, '/theme');
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.list),
+                title: const Text("Списки"),
+                onTap:(){
+                  //_messengerKey.currentState!.showSnackBar(
+                  //   const SnackBar(content: Text("Переход в настройки"),)
+                  // );
+                  Navigator.pushNamed(context, '/lists');
                 },
               ),
             ],

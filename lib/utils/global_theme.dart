@@ -5,7 +5,7 @@ ThemeData globalTheme() => ThemeData(
     splashColor: Colors.yellow,
 
     colorScheme: ColorScheme.fromSwatch(
-      brightness: Brightness.light,
+      brightness: Brightness.dark,
       primarySwatch: Colors.orange,
     ).copyWith(secondary: Colors.green,),
     textTheme: const TextTheme(
