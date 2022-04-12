@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lite_version/auth_screen.dart';
-import 'package:lite_version/AppBar.dart';
+import 'package:lite_version/screens/auth_screen.dart';
+import 'package:lite_version/screens/app_bar.dart';
+import 'package:lite_version/screens/theme_data_func.dart';
+import 'package:lite_version/utils/global_theme.dart';
+
 class NavigationDemo extends StatefulWidget{
   const NavigationDemo({Key? key}) : super (key: key);
 
@@ -16,11 +19,13 @@ class _NavigationDemoState extends State<NavigationDemo>{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme:globalTheme(),
         initialRoute: '/',
         routes: {
           '/': (context) => const NavigationScreen(),
           '/auth': (context) => const AuthScreen(),
           '/appbar': (context) => const AppBarScreen(),
+          '/theme' :(context) => const ThemeDataDemo(),
         },
       //scaffoldMessengerKey: _messengerKey,
     );
@@ -103,11 +108,12 @@ class _NavigationScreenState extends State<NavigationScreen>{
               ),
               ListTile(
                 leading: const Icon(Icons.settings_accessibility),
-                title: const Text("Настройки"),
+                title: const Text("Тема"),
                 onTap:(){
                   //_messengerKey.currentState!.showSnackBar(
                    //   const SnackBar(content: Text("Переход в настройки"),)
                  // );
+                  Navigator.pushNamed(context, '/theme');
                 },
               ),
             ],
