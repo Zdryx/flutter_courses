@@ -6,6 +6,7 @@ import 'package:lite_version/screens/theme_page.dart';
 import 'package:lite_version/utils/global_theme.dart';
 
 import 'case_3_1.dart';
+import 'case_3_2.dart';
 import 'lists.dart';
 
 class NavigationDemo extends StatefulWidget{
@@ -31,6 +32,7 @@ class _NavigationDemoState extends State<NavigationDemo>{
           '/theme' :(context) => const ThemeDataDemo(),
           '/lists' :(context) => const ListsBuilder(),
           '/case_3_1' :(context) => const SafetyStatefulWidget(storage: CounterStorage()),
+          '/case_3_2' :(context) => const HTTPStatefulWidget(),
         },
       //scaffoldMessengerKey: _messengerKey,
     );
@@ -123,10 +125,17 @@ class _NavigationScreenState extends State<NavigationScreen>{
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.list),
+                leading: const Icon(Icons.cases),
                 title: const Text("Кейс 3.1"),
                 onTap:(){
                   Navigator.pushNamed(context, '/case_3_1');
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.cases),
+                title: const Text("Кейс 3.2"),
+                onTap:(){
+                  Navigator.pushNamed(context, '/case_3_2');
                 },
               ),
             ],

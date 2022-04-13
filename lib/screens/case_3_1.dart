@@ -4,13 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:path_provider/path_provider.dart';
 
-class SafetyStatefulWidget extends StatefulWidget{
-  const SafetyStatefulWidget({Key? key, required this.storage}) : super (key: key);
-  final CounterStorage storage;
-  @override
-  State<SafetyStatefulWidget> createState() => _SafetyStatefulWidgetState();
-}
-
 class CounterStorage {
   const CounterStorage();
   Future<String> get _localPath async{
@@ -38,6 +31,15 @@ class CounterStorage {
       return file.writeAsString('$counter');
   }
 
+}
+
+
+// Виджет
+class SafetyStatefulWidget extends StatefulWidget{
+  const SafetyStatefulWidget({Key? key, required this.storage}) : super (key: key);
+  final CounterStorage storage;
+  @override
+  State<SafetyStatefulWidget> createState() => _SafetyStatefulWidgetState();
 }
 
 class _SafetyStatefulWidgetState extends State<SafetyStatefulWidget>{

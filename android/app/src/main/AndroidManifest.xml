@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lite_version">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="lite_version"
         android:icon="@mipmap/ic_launcher">
