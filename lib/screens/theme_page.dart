@@ -41,7 +41,7 @@ class _ThemeDataDemoState extends State<ThemeDataDemo>{
           ),
 
           const SizedBox(height: 19,),
-          Row(children: const[
+         Row(children: const[
             Text(
               "Введите логин в виде 10 цифр \nномера телефона",
               textAlign: TextAlign.center,
@@ -123,10 +123,12 @@ class _ThemeDataDemoState extends State<ThemeDataDemo>{
           ],
             mainAxisAlignment: MainAxisAlignment.center,
           ),
-
         ],),
       ),
       //  ),
     );
   }
 }
+
+
+

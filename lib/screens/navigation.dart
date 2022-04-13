@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lite_version/screens/auth_screen.dart';
 import 'package:lite_version/screens/app_bar.dart';
-import 'package:lite_version/screens/theme_data_func.dart';
+import 'package:lite_version/screens/theme_page.dart';
 import 'package:lite_version/utils/global_theme.dart';
 
+import 'case_3_1.dart';
 import 'lists.dart';
 
 class NavigationDemo extends StatefulWidget{
@@ -29,6 +30,7 @@ class _NavigationDemoState extends State<NavigationDemo>{
           '/appbar': (context) => const AppBarScreen(),
           '/theme' :(context) => const ThemeDataDemo(),
           '/lists' :(context) => const ListsBuilder(),
+          '/case_3_1' :(context) => const SafetyStatefulWidget(storage: CounterStorage()),
         },
       //scaffoldMessengerKey: _messengerKey,
     );
@@ -98,9 +100,6 @@ class _NavigationScreenState extends State<NavigationScreen>{
                 leading: const Icon(Icons.two_k_plus),
                 title: const Text("AppBar"),
                 onTap:(){
-                 // _messengerKey.currentState!.showSnackBar(
-                   //   const SnackBar(content: Text("Переход в AppBar"),)
-                 // );
                   Navigator.pushNamed(context, '/appbar');
                 },
               ),
@@ -113,9 +112,6 @@ class _NavigationScreenState extends State<NavigationScreen>{
                 leading: const Icon(Icons.settings_accessibility),
                 title: const Text("Тема"),
                 onTap:(){
-                  //_messengerKey.currentState!.showSnackBar(
-                   //   const SnackBar(content: Text("Переход в настройки"),)
-                 // );
                   Navigator.pushNamed(context, '/theme');
                 },
               ),
@@ -123,10 +119,14 @@ class _NavigationScreenState extends State<NavigationScreen>{
                 leading: const Icon(Icons.list),
                 title: const Text("Списки"),
                 onTap:(){
-                  //_messengerKey.currentState!.showSnackBar(
-                  //   const SnackBar(content: Text("Переход в настройки"),)
-                  // );
                   Navigator.pushNamed(context, '/lists');
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.list),
+                title: const Text("Кейс 3.1"),
+                onTap:(){
+                  Navigator.pushNamed(context, '/case_3_1');
                 },
               ),
             ],
